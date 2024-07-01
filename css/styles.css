@@ -88,6 +88,16 @@ section {
     transition: ease 0.3s all;
 }
 
+.navbar__menu .menu-icon {
+    display: none;
+}
+
+/* nav Active Styles */
+.menu__link.active {
+    background-color: #333;
+    color: white; 
+}
+
 /* Header Styles */
 .page__header {
     background: #fff;
@@ -95,6 +105,11 @@ section {
     top: 0;
     width: 100%;
     z-index: 5;
+    transition: top 0.3s;
+}
+
+.hidden {
+  top: -100px; 
 }
 
 /* Footer Styles */
@@ -193,17 +208,17 @@ section:nth-of-type(3n + 1) .landing__container::after {
 /* ---- Theme State Rules ---- */
 /* Section Active Styles */
 /* Note: your-active-class class is applied through javascript. You should update the class here and in the index.html to what you set in your javascript file.  */
-section.your-active-class {
+section.active-section {
     background: rgb(0, 0, 0);
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
 }
 
-section.your-active-class .landing__container::before {
+section.active-section .landing__container::before {
     opacity: 1;
     animation: rotate 4s linear 0s infinite forwards;
 }
 
-section.your-active-class .landing__container::after {
+section.active-section .landing__container::after {
     opacity: 1;
     animation: rotate 5s linear 0s infinite forwards reverse;
 }
@@ -221,3 +236,59 @@ section.your-active-class .landing__container::after {
 		           rotate(-360deg);
 	}
 }
+
+/************ Media Queries *************/
+
+/* For small screens (max-width: 576px) */
+@media (max-width: 576px) {
+    .navbar__menu .menu-icon {
+        display: block;
+        color: black;
+        padding: 2em;
+        cursor: pointer;
+    }
+
+     #navbar__list {
+        display: none;
+    }
+
+    #navbar__list.active {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+
+    .hidden {
+        top: 0; 
+    }   
+}
+
+/* For medium screens (min-width: 576px and max-width: 768px) */
+@media (min-width: 576px) and (max-width: 768px) {
+    .navbar__menu .menu__link {
+        font-size: 0.6em;
+    }
+}
+
+/* Scroll to top button styles */
+#scrollToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 6;
+    border: 1px solid #333;
+    background-color: #000;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 18px; 
+}
+
+#scrollToTopBtn:hover {
+    background-color: #555;
+}
+
+
+

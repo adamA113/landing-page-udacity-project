@@ -1,9 +1,15 @@
 # Landing Page Project
 
-## Instructions
+## Overview
+This project demonstrates how to dynamically build a landing page using JavaScript. The landing page includes a navigation bar that is dynamically generated based on the sections present on the page. It also features collapsible sections, a scroll-to-top button, and highlights sections in the viewport as the user scrolls.
 
-The starter project has some HTML and CSS styling to display a static version of the Landing Page project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+### Development
+To run this project on your local machine:
+* Make a forked repo.
+* cd into the cloned files.
+* Run a local server.
 
-To get started, open `js/app.js` and start building out the app's functionality
+License
+---
 
-For specific, detailed instructions, look at the project instructions in the Udacity Classroom.
+MIT
